@@ -1,0 +1,72 @@
+<%!-- <.header>
+  Personagem <%= @personagem.id %>
+  <:subtitle>This is a personagem record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/personagens/#{@personagem}/edit"}>
+      <.button>Edit personagem</.button>
+    </.link>
+  </:actions>
+</.header> --%>
+<body style="background-image: linear-gradient(to right, #40489c, #666db0); font-family: 'Lato';">
+  <div style="display: flex; align-items: center; justify-content: center; margin-top: 2rem; flex-direction: column;">
+    <%!-- Título --%>
+      <h1 style="font-size: 3.2rem; color: white; margin-bottom: 2rem;"> <%= @personagem.fullName %> </h1>
+    <%!-- Box Foto + Casa --%>
+    <div style="display: flex; align-items: center; gap: 4rem">
+
+      <%!-- Box Foto --%>
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="border-radius: 5px; border: solid 3px white; margin-top: 0.2rem; overflow: hidden; width: 20rem; box-shadow: 0 1.5rem 3rem #00000044">
+          <img class="img-personagem" src={ @personagem.image } style="width: 100%"/>
+        </div>
+        <p style="color: #ffffff88; margin-bottom: 3rem;">Interpretado por <%= @personagem.interpretedBy%></p>
+      </div>
+
+      <%!-- Box Casa --%>
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <%!-- Grifinória --%>
+        <%= if @personagem.hogwartsHouse == "Grifinória" do %>
+          <img class="img-casa" src={~p"/images/hogwarts/Gryffindor_ClearBG.webp"} alt="" style="width: 20rem;">
+        <% end %>
+        <%!-- Corvinal --%>
+        <%= if @personagem.hogwartsHouse == "Corvinal" do %>
+          <img class="img-casa" src={~p"/images/hogwarts/Corvinal_ClearBG.webp"} alt="" style="width: 20rem;">
+        <% end %>
+        <%!-- Sonserina --%>
+        <%= if @personagem.hogwartsHouse == "Sonserina" do %>
+          <img class="img-casa" src={~p"/images/hogwarts/Slytherin_ClearBG.webp"} alt="" style="width: 20rem;">
+        <% end %>
+        <%!-- Lufa-lufa --%>
+        <%= if @personagem.hogwartsHouse == "Lufa-Lufa" do %>
+          <img class="img-casa" src={~p"/images/hogwarts/Hufflepuff_ClearBG.webp"} alt="" style="width: 20rem;">
+        <% end %>
+
+        <p style="color: #fff; margin-bottom: 1rem; font-size: 2rem; font-weight: 500;"><%= @personagem.hogwartsHouse%></p>
+      </div>
+    </div>
+      <p style="color: white;"><%= @personagem.birthdate %> </p>
+  </div>
+
+    
+    
+
+
+
+
+
+
+</body>
+
+<%!-- <.list>
+  <:item title="Fullname"><%= @personagem.fullName %></:item>
+  <:item title="Hogwartshouse"><%= @personagem.hogwartsHouse %></:item>
+  <:item title="Interpretedby"><%= @personagem.interpretedBy %></:item>
+  <:item title="Image"><%= @personagem.image %></:item>
+  <:item title="Birthdate"><%= @personagem.birthdate %></:item>
+</.list> --%>
+
+
+
+
+
+<%!-- <.back navigate={~p"/personagens"}>Back to personagens</.back> --%>

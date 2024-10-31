@@ -1,0 +1,8 @@
+<.header>
+  Edit Feitico <%= @feitico.id %>
+  <:subtitle>Use this form to manage feitico records in your database.</:subtitle>
+</.header>
+
+<.feitico_form changeset={@changeset} action={~p"/feiticos/#{@feitico}"} />
+
+<.back navigate={~p"/feiticos"}>Back to feiticos</.back>

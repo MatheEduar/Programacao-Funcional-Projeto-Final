@@ -1,0 +1,27 @@
+<%!-- <.header>
+  Feitico <%= @feitico.id %>
+  <:subtitle>This is a feitico record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/feiticos/#{@feitico}/edit"}>
+      <.button>Edit feitico</.button>
+    </.link>
+  </:actions>
+</.header> --%>
+<body style="background-image: linear-gradient(to right, #40489c, #666db0); font-family: 'Lato'; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: white;">
+
+<h1 style="font-size: 6rem"><%= @feitico.nome %></h1>
+<h2 style="font-size: 3rem">"<%= @feitico.descricao %>"</h2>
+
+</body>
+
+
+
+
+
+<%!-- 
+<.list>
+  <:item title="Nome"><%= @feitico.nome %></:item>
+  <:item title="Descricao"><%= @feitico.descricao %></:item>
+</.list>
+
+<.back navigate={~p"/feiticos"}>Back to feiticos</.back> --%>

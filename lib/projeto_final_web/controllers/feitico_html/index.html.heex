@@ -1,0 +1,24 @@
+<.header>
+  Listing Feiticos
+  <:actions>
+    <.link href={~p"/feiticos/new"}>
+      <.button>New Feitico</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="feiticos" rows={@feiticos} row_click={&JS.navigate(~p"/feiticos/#{&1}")}>
+  <:col :let={feitico} label="Nome"><%= feitico.nome %></:col>
+  <:col :let={feitico} label="Descricao"><%= feitico.descricao %></:col>
+  <:action :let={feitico}>
+    <div class="sr-only">
+      <.link navigate={~p"/feiticos/#{feitico}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/feiticos/#{feitico}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={feitico}>
+    <.link href={~p"/feiticos/#{feitico}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

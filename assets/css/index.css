@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Cores 
+
+Primária Clara: #666db0
+Primária: #40489c
+Primária Escura: #1a1d3e
+
+
+*/
+
+/* Auxiliares */
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
+.u-margin-top-small {
+  margin-top: 2rem;
+}
+
+.u-margin-top-medium {
+  margin-top: 4rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
+.u-margin-left-small {
+  margin-left: 2rem;
+}
+
+.u-margin-left-medium {
+  margin-left: 4rem;
+}
+
+.u-margin-left-big {
+  margin-left: 8rem;
+}
+
+.u-color-white {
+  color: white !important
+}
+
+/* Estilização Geral */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family:  "Poppins", sans-serif;
+  background-image: linear-gradient(to right, #40489c, #666db0);
+}
+
+a:link, a:visited {
+  color: #1a1d3e;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #9c4077;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Estilização Containers */
+
+.header {
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #40489c77, #666db077), url("../images/HomePageBackground.jpg");
+  background-size: cover;
+}
+
+.img-header {
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #40489c, #666db0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width: 90%;
+  height: 90%;
+}
+
+.container-personagens {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.container-personagem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.container-personagem__img-box {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 100%;
+  background-color: #1a1d3e;
+  overflow: hidden;
+}
+
+.container-casa__img-box img {
+    width: 100%;
+}
+
+.container-feitiços {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-casas {
+  background-image: linear-gradient(to bottom, #1a1d3edd, #40489cdd), url("../images/hogwarts/castelo.webp");
+  background-size: cover;
+}
+
+.container-casas {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-casa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  border-radius: 30px;
+  box-shadow: 0 1.5rem 3rem #00000022;
+  padding: 2rem 2rem 4rem 2rem;
+  /* background-color: #666db0; */
+  background-image: linear-gradient(to bottom, #40489c, #666db0)
+}
+
+.container-casa__img-box {
+  width: 25rem;
+  height: 100%;
+}
+
+.img-casa {
+  width: 100%;
+  height: 100%;
+}
+
+.lista-feitiços {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.section--livros {
+  background-image: linear-gradient(to bottom, #1a1d3edd, #40489cdd), url("../images/hogwarts/biblioteca.jpg");
+  background-size: cover;
+  height: 230vh !important;
+}
+
+.container-livros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 30px;
+}
+
+.livro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.livro__img-box{
+  width: 30rem;
+}
+
+.livro__img-box img {
+  width: 100%;
+}
+
+/* Tipografia */
+
+.heading-secondary {
+  color: #1a1d3e;
+  font-size: 4.8rem;
+  font-weight: 500;
+}
+
+.heading-terciary {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.link-feitiço {
+  font-size: 1.6rem;
+}
+
+.link-casa {
+  font-size: 2.4rem;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  font-family: 'Hogwarts';
+  font-size: 12.4rem;
+  color: #1a1d3e;
+}
+
+.header span {
+  text-transform: capitalize;
+  margin-top: -3rem;
+  font-size: 2rem;
+  font-family: "Hogwarts";
+  font-weight: 600;
+  color: #1a1d3e;
+}
+
+.header i {
+  margin-top: 2rem;
+  font-size: 4rem;
+  color: #1a1d3e;
+}
+
+.footer {
+  background-color: #1a1d3d;
+  height: 40vh;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+}
+
+.footer-title {
+  font-size: 2.4rem;
+  color: #666db0;
+}
+
+p {
+  font-size: 1.6rem;
+  color: #666db0;
+}
+
+.link-todos-os {
+  text-align: end;
+}

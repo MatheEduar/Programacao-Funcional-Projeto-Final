@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title suffix=" · Phoenix Framework">
+      <%= assigns[:page_title] || "HarryPotter" %>
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/index.css"} />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+  </head>
+  <body>
+
+    <header class="header">
+        <h1 class="heading-primary">Hogwarts</h1>
+        <span><br/>Desvende os segredos do nosso Elixir</span>     
+        <i class="devicon-elixir-plain"></i>
+    </header>
+
+    <!-- Sessão para Personagens -->
+
+    <section class="section">
+        <div class="container">
+            <h2 class="heading-secondary u-margin-bottom-medium u-margin-top-medium u-color-white">Personagens</h2>
+            <!-- Container para personagens -->
+            <div class="container-personagens">
+                    <%=  %>
+                    <%= for personagem <- Enum.take(@personagens, 10) do %>
+                    <div class="container-personagem">
+                        <div class="container-personagem__img-box" style="overflow: hidden;">
+                            <img class="img-personagem" src={ personagem.image }  style="width: 100%;"/>
+                        </div>
+                        <div class="container-personagem__text-box">
+                            <h3 class="heading-terciary">
+                                <a class="link-personagem" href={~p"/personagens/#{personagem}"} ><%= personagem.fullName %></a>
+                            </h3>
+                        </div>
+                    </div>
+                    <% end %>
+                    
+            </div>
+
+            <h3 class="heading-terciary u-margin-top-big link-todos-os">
+                <a class="" href={~p"/personagens/"}>Todos os personagens &rarr;</a>
+            </h3>
+
+        </div>
+    </section>
+
+    <!-- Sessão para Casas -->
+    <section class="section section-casas">
+        <div class="container">
+            <h2 class="heading-secondary u-color-white u-margin-bottom-big u-margin-top-medium">Casas de Hogwarts</h2>
+            <!-- Container para as casas de Hogwarts -->
+            <div class="container-casas">
+                <!-- Container para uma casa de Hogwarts -->
+                <div class="container-casa">
+                    <div class="container-casa__img-box">
+                        <img class="img-casa" src={~p"/images/hogwarts/Corvinal_ClearBG.webp"} alt="">
+                    </div>
+                    <div class="container-casa__text-box">
+                        <h3 class="heading-terciary">
+                            <a class="link-casa" href="">Corvinal</a>
+                        </h3>
+                    </div>
+                </div>
+                <!-- Container para uma casa de Hogwarts -->
+                <div class="container-casa">
+                    <div class="container-casa__img-box">
+                        <img class="img-casa" src={~p"/images/hogwarts/Gryffindor_ClearBG.webp"} alt="">
+                    </div>
+                    <div class="container-casa__text-box">
+                        <h3 class="heading-terciary">
+                            <a class="link-casa" href="">Grifinória</a>
+                        </h3>
+                    </div>
+                </div>
+                <!-- Container para uma casa de Hogwarts -->
+                <div class="container-casa">
+                    <div class="container-casa__img-box">
+                        <img class="img-casa" src={~p"/images/hogwarts/Hufflepuff_ClearBG.webp"} alt="">
+                    </div>
+                    <div class="container-casa__text-box">
+                        <h3 class="heading-terciary">
+                            <a class="link-casa" href="">Lufa-lufa</a>
+                        </h3>
+                    </div>
+                </div>
+                <!-- Container para uma casa de Hogwarts -->
+                <div class="container-casa">
+                    <div class="container-casa__img-box">
+                        <img class="img-casa" src={~p"/images/hogwarts/Slytherin_ClearBG.webp"} alt="">
+                    </div>
+                    <div class="container-casa__text-box">
+                        <h3 class="heading-terciary">
+                            <a class="link-casa" href="">Sonserina</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessão para os Feitiços -->
+    <section class="section">
+        <div class="container">
+            <h2 class="heading-secondary u-margin-bottom-medium u-margin-top-medium u-color-white">Feitiços</h2>
+            <!-- Container para listas de feitiços -->
+            <div class="container-feitiços">
+                <!-- Container para lista de feitiços -->
+                <ul class="lista-feitiços">
+                <%= for feitico <- Enum.take(@feiticos, 12) do %>
+                    <li class="feitiço"><h3 class="heading-terciary"><a class="link-feitiço" href={~p"/feiticos/#{feitico}"}><%= feitico.nome %>  </a></h3></li>
+                <% end %>
+                </ul>
+                
+                <ul class="lista-feitiços">
+                <%= for feitico <- Enum.slice(@feiticos, 12, 12) do %>
+                    <li class="feitiço"><h3 class="heading-terciary"><a class="link-feitiço" href={~p"/feiticos/#{feitico}"}><%= feitico.nome %>  </a></h3></li>
+                <% end %>
+                </ul>
+
+                <ul class="lista-feitiços">
+                <%= for feitico <- Enum.slice(@feiticos, 24, 12) do %>
+                    <li class="feitiço"><h3 class="heading-terciary"><a class="link-feitiço" href={~p"/feiticos/#{feitico}"}><%= feitico.nome %>  </a></h3></li>
+                <% end %>
+                </ul>
+
+                <ul class="lista-feitiços">
+                <%= for feitico <- Enum.slice(@feiticos, 36, 12) do %>
+                    <li class="feitiço"><h3 class="heading-terciary"><a class="link-feitiço" href={~p"/feiticos/#{feitico}"}><%= feitico.nome %>  </a></h3></li>
+                <% end %>
+                </ul>
+
+                <ul class="lista-feitiços">
+                <%= for feitico <- Enum.slice(@feiticos, 48, 12) do %>
+                    <li class="feitiço"><h3 class="heading-terciary"><a class="link-feitiço" href={~p"/feiticos/#{feitico}"}><%= feitico.nome %>  </a></h3></li>
+                <% end %>
+                </ul>
+
+                <ul class="lista-feitiços">
+                <%= for feitico <- Enum.slice(@feiticos, 60, 12) do %>
+                    <li class="feitiço"><h3 class="heading-terciary"><a class="link-feitiço" href={~p"/feiticos/#{feitico}"}><%= feitico.nome %>  </a></h3></li>
+                <% end %>
+                </ul>
+                
+                
+            </div>
+
+            
+        </div>
+    </section>
+    
+    <!-- Sessão para as Livros -->
+    <section class="section section--livros">
+        <div class="container">
+            <h2 class="heading-secondary u-margin-bottom-big u-margin-top-small u-color-white">Livros</h2>
+            <!-- Container para os livros -->
+            <div class="container-livros">
+                <!-- Container para um livro -->
+                 <div class="livro">
+                    <div class="livro__img-box">
+                        <img src={~p"/images/hogwarts/pedra-filosofal.jpg"} alt="">
+                    </div>
+                 </div>
+                <!-- Container para um livro -->
+                 <div class="livro">
+                    <div class="livro__img-box">
+                        <img src={~p"/images/hogwarts/a-camara-secreta.jpg"} alt="">
+                    </div>
+                 </div>
+                <!-- Container para um livro -->
+                 <div class="livro">
+                    <div class="livro__img-box">
+                        <img src={~p"/images/hogwarts/prisioneiro-de-azkaban.jpg"} alt="">
+                    </div>
+                </div>
+                <!-- Container para um livro -->
+                <div class="livro">
+                    <div class="livro__img-box">
+                        <img src={~p"/images/hogwarts/calice-de-fogo.jpg"} alt="">
+                    </div>
+                 </div>
+                <!-- Container para um livro -->
+                 <div class="livro">
+                    <div class="livro__img-box">
+                        <img src={~p"/images/hogwarts/ordem-da-fenix.jpg"} alt="">
+                    </div>
+                 </div>
+                <!-- Container para um livro -->
+                 <div class="livro">
+                    <div class="livro__img-box">
+                        <img src={~p"/images/hogwarts/enigma-do-principe.jpg"} alt="">
+                    </div>
+                 </div>
+                 <!-- Container vazio -->
+                 <div></div>
+                <!-- Container para um livro -->
+                 <div class="livro">
+                    <div class="livro__img-box">
+                        <img src={~p"/images/hogwarts/reliquias-da-morte.jpg"} alt="">
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container u-margin-left-big">
+            <div>
+                <h3 class="heading-terciary footer-title u-margin-bottom-small">Projeto de Programação Funcional  <i class="devicon-elixir-plain"></i></h3>
+                <p>Professor: Andrei Formiga</p>
+                <p>Alunos: Joás e Matheus</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

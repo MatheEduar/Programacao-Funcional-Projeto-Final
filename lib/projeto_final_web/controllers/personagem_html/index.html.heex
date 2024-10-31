@@ -1,0 +1,56 @@
+<%!-- <.header>
+  Listing Personagens
+  <:actions>
+    <.link href={~p"/personagens/new"}>
+      <.button>New Personagem</.button>
+    </.link>
+  </:actions>
+</.header> --%>
+
+<body style="background-image: linear-gradient(to right, #40489c, #666db0); font-family: 'Lato';">
+  <div style="display: flex; flex-direction: column; padding: 5rem 27rem; gap: 3rem;">
+    <h1 style="align-self: center; font-size: 2.4rem; color: white;">Personagens</h1>
+    <%= for personagem <- @personagens do %>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem;
+      background-color: #40489c; border-radius: 30px; box-shadow: 0 1.5rem 3rem #00000033; border: 1px solid #1a1d3e;">
+        <h2 style="font-size: 1.4rem; color: white"> 
+          <a href={~p"/personagens/#{personagem}"}><%= personagem.fullName %></a>
+        </h2>
+        <div style="height: 10rem; width: 10rem; overflow: hidden; border: 2px solid white; border-radius: 30px"> <img style="width: 100%" src={ personagem.image }> </div>
+      </div>
+    <%= end %>
+
+  </div>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+<%!-- <.table id="personagens" rows={@personagens} row_click={&JS.navigate(~p"/personagens/#{&1}")}>
+  <:col :let={personagem} label="Fullname"><%= personagem.fullName %></:col>
+  <:col :let={personagem} label="Hogwartshouse"><%= personagem.hogwartsHouse %></:col>
+  <:col :let={personagem} label="Interpretedby"><%= personagem.interpretedBy %></:col>
+  <:col :let={personagem} label="Image"><%= personagem.image %></:col>
+  <:col :let={personagem} label="Birthdate"><%= personagem.birthdate %></:col>
+  <:action :let={personagem}>
+    <div class="sr-only">
+      <.link navigate={~p"/personagens/#{personagem}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/personagens/#{personagem}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={personagem}>
+    <.link href={~p"/personagens/#{personagem}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table> --%>
